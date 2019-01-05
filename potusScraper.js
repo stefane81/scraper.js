@@ -1,3 +1,5 @@
+console.time('timer1');
+
 const rp = require('request-promise');
 const $ = require('cheerio');
 const potusParse = require('./potusParse');
@@ -19,8 +21,11 @@ rp(url)
     })
     .then(function (presidents) {
         console.log(presidents);
+        console.timeEnd('timer1');
     })
     .catch(function (err) {
         // handle error
         console.log(err);
     });
+
+    
